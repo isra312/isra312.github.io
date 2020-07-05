@@ -81,7 +81,7 @@
   color: #56a5eb;
   background-color: white;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 .btn-home:link {
@@ -104,7 +104,6 @@
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: unset;
   width: 10rem;
   height: 5rem;
 }
@@ -118,10 +117,12 @@
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: relative;
   background-color: white;
   min-width: 160px;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  border: 0.1rem solid #56a5eb;
+  margin-top: 1.3rem;
   z-index: 1;
 }
 
@@ -134,11 +135,13 @@
     color: #56a5eb;
     background-color: white;
     display: block;
+    text-decoration: none;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: white;
+  background-color: #56a5eb;
+  color: white;
 }
 
 /* Show the dropdown menu on hover */

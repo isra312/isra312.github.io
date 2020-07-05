@@ -75,6 +75,9 @@ getNewQuestion = () => {
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
+
+        if(!currentQuestion["choice" + number])
+            choice.parentElement.remove();
     });
 
     availableQuestions.splice(questionIndex, 1);
