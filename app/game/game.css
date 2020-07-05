@@ -1,122 +1,166 @@
 .choice-container {
-    display: flex;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    font-size: 1.8rem;
-    border: 0.1rem solid rgb(86, 165, 235, 0.25);
-    background-color: white;
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0.1rem solid rgb(86, 165, 235, 0.25);
+  background-color: white;
 }
 
 .choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
 }
 
 .choice-prefix {
-    padding: 1.5rem 2.5rem;
-    background-color: #65a5eb;
-    color: white;
+  padding: 1.5rem 2.5rem;
+  background-color: #65a5eb;
+  color: white;
 }
 
 .choice-text {
-    padding: 1.5rem;
-    width: 100%;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 .correct {
-    background-color: #28a745;
+  background-color: #28a745;
 }
 
 .incorrect {
-    background-color: #dc3545;
+  background-color: #dc3545;
 }
 
 /* HUD */
 
 #hud {
-    display: flex;
-    justify-content: space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .hud-prefix {
-    text-align: center;
-    font-size: 2rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .hud-main-text {
-    text-align: center;
+  text-align: center;
 }
 
 #progressBar {
-    width: 20rem;
-    height: 4rem;
-    border: 0.3rem solid #56a5eb;
-    margin-top: 2rem;
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid #56a5eb;
+  margin-top: 2rem;
 }
 
 #progressBarFull {
-    height: 3.4rem;
-    background-color: #56a5eb;
-    width: 0%;
+  height: 3.4rem;
+  background-color: #56a5eb;
+  width: 0%;
 }
 
 /* Menu */
 #menu {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 2rem;
-    margin-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 .btn-home {
-    font-size: 1.8rem;
-    padding: 1.25rem;
-    width: 5rem;
-    height: 5rem;
-    text-align: center;
-    border: 0.1rem solid #56a5eb;
-    margin-bottom: 1rem;
-    color: #56a5eb;
-    background-color: white;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    border-radius: 50%;
+  font-size: 1.8rem;
+  padding: 1.25rem;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  border: 0.1rem solid #56a5eb;
+  margin-bottom: 1rem;
+  color: #56a5eb;
+  background-color: white;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  border-radius: 50%;
 }
 
 .btn-home:link {
-    color: #56a5eb
+  color: #56a5eb;
 }
 
 .btn-home[disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .btn-home:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.5rem);
-    transition: transform 150ms;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.5rem);
+  transition: transform 150ms;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: unset;
+  width: 10rem;
+  height: 5rem;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  transition: transform 150ms;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    color: #56a5eb;
+    background-color: white;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* LOADER */
 #loader {
-    border: 1.6rem solid white;
-    border-radius: 50%;
-    border-top: 1.6rem solid #56a5eb;
-    width: 12rem;
-    height: 12rem;
-    animation: spin 2s linear infinite;
+  border: 1.6rem solid white;
+  border-radius: 50%;
+  border-top: 1.6rem solid #56a5eb;
+  width: 12rem;
+  height: 12rem;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg)
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
