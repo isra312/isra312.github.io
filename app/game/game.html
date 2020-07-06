@@ -16,10 +16,10 @@
       <div id="loader"></div>
       <div id="game" class="justify-center flex-column hidden">
         <div class="dropdown">
-          <a class="btn-home"><i class="fa fa-bars"></i> Menu</a>
+          <a class="btn-menu"><i class="fa fa-bars"></i> Menu</a>
           <div class="dropdown-content">
-            <a href="/"><i class="fa fa-home"></i> Home</a>
-            <a href="/app/highscores/highscores.html"><i class="fa  fa-trophy"></i> High Scores</a>
+            <a id="homeButton" onclick="confirmExit(id)"><i class="fa fa-home"></i> Home</a>
+            <a id="highScoresButton" onclick="confirmExit(id)"><i class="fa  fa-trophy"></i> High Scores</a>
           </div>
         </div>
         <div id="hud">

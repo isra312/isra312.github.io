@@ -70,7 +70,7 @@
   margin-left: 2rem;
 }
 
-.btn-home {
+.btn-menu {
   font-size: 1.8rem;
   padding: 1.25rem;
   width: 5rem;
@@ -84,17 +84,17 @@
   border-radius: 0%;
 }
 
-.btn-home:link {
+.btn-menu:link {
   color: #56a5eb;
 }
 
-.btn-home[disabled]:hover {
+.btn-menu[disabled]:hover {
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
 }
 
-.btn-home:hover {
+.btn-menu:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
   transform: translateY(-0.5rem);
