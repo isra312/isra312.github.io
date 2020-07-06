@@ -15,7 +15,7 @@ let availableQuestions = [];
 let questions = [];
 
 fetch("https://opentdb.com/api.php?amount=10").then(res =>{
-    return res.json()
+    return res.json();
 }).then(loadedQuestions => {
         questions = loadedQuestions.results.map(loadedQuestion => {
             const formattedQuestion = {
@@ -70,11 +70,11 @@ getNewQuestion = () => {
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
+    question.innerText = currentQuestion.question.replace(/&quot;/g,'"').replace(/&#039;/g,'\'');
 
     choices.forEach(choice => {
         const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number];
+        choice.innerText = currentQuestion["choice" + number] ? (currentQuestion["choice" + number]).replace(/&quot;/g,'"').replace(/&#039;/g,'\''): null;
 
         if(!currentQuestion["choice" + number])
             choice.parentElement.remove();
