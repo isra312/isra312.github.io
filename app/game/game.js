@@ -121,7 +121,7 @@ const confirmExit = (btnId) => {
   const homeAddress = "/index.html";
   const highScoresAddress = "/app/highscores/highscores.html";
 
-  var ok = confirm("Deseja realmente sair? Todos os pontos serão perdidos.");
+  var ok = confirm("Are you sure? All the progress will be lost.");
   console.log("ok", ok);
 
   if (!ok) return;
