@@ -6,6 +6,10 @@ const progressBarFull = document.getElementById("progressBarFull");
 const loader = document.getElementById("loader");
 const game = document.getElementById("game");
 
+/// CONSTANTS
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 2;
+
 let currentQuestion = {};
 let acceptingAnswer = false;
 let score = 0;
@@ -41,10 +45,6 @@ fetch("https://opentdb.com/api.php?amount=10")
     startGame();
   })
   .catch((err) => console.log(err));
-
-/// CONSTANTS
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 5;
 
 startGame = () => {
   questionCounter = 0;
