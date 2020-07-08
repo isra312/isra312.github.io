@@ -8,7 +8,7 @@ const game = document.getElementById("game");
 
 /// CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 2;
+const MAX_QUESTIONS = 21;
 
 let currentQuestion = {};
 let acceptingAnswer = false;
@@ -18,7 +18,7 @@ let availableQuestions = [];
 
 let questions = [];
 
-fetch("https://opentdb.com/api.php?amount=10")
+fetch(`https://opentdb.com/api.php?amount=${MAX_QUESTIONS}`)
   .then((res) => {
     return res.json();
   })
@@ -84,7 +84,9 @@ getNewQuestion = () => {
           .replace(/&#039;/g, "'")
       : null;
 
-    if (!currentQuestion["choice" + number]) choice.parentElement.remove();
+    !currentQuestion["choice" + number]
+      ? (choice.parentElement.style.display = "none")
+      : (choice.parentElement.style.display = "flex");
   });
 
   availableQuestions.splice(questionIndex, 1);
@@ -129,10 +131,8 @@ const confirmExit = (btnId) => {
   console.log("btnId", btnId);
 
   if (btnId === "homeButton") {
-      console.log(homeAddress);
     window.location.href = homeAddress;
   } else if (btnId === "highScoresButton") {
-    console.log(highScoresAddress);
     window.location.href = highScoresAddress;
   }
 };
